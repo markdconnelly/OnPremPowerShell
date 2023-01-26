@@ -35,7 +35,21 @@ foreach($arrUser in $arrImportedUsers){
     try{
         $arrGetADUser = Get-ADUser -Identity $arrUser.UserID -ErrorAction Stop
         $psobjResolvedUsers += [PSCustomObject]@{
+            GUID = $arrGetADUser.Guid
             SamAccountName = $arrGetADUser.SamAccountName
+            SID = $arrGetADUser.SID
+            City = $arrGetADUser.City
+            Company = $arrGetADUser.Company
+            Country = $arrGetADUser.Country
+            Created = $arrGetADUser.Created
+            Department = $arrGetADUser.Department
+            Description = $arrGetADUser.Description
+            EmailAddress = $arrGetADUser.mail
+            EmployeeID = $arrGetADUser.EmployeeID
+            State = $arrGetADUser.State
+            StreetAddress = $arrGetADUser.StreetAddress
+            Title = $arrGetADUser.Title
+            UserPrincipalName = $arrGetADUser.UserPrincipalName
         }       
     }catch{
         $objError = Get-Error
