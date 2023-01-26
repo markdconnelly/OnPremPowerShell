@@ -2,7 +2,15 @@
     One file will contain details about the users that were successfully resolved and the other will contain details about the users that were not resolved.
     These outputs can then be used to identify users that were provided on the source list but are not in Active Directory.
     The Resolved Users output can then be used in conjunction with other scripts to perform tasks like bulk group adds or bulk group removals etc with 
-    valid users.    #>
+    valid users.    
+    
+    This script is based on the -Identity parameter of the Get-ADUser cmdlet. It will attempt to resolve the user based on the value provided in the UserID field
+    These can include: 
+        - Distinguished Name
+        - GUID
+        - SID
+        - SamAccountName
+    #>
 ####################### Variables Requiring Input #################
 $strImportFilePath = "(Your Import File Here)"
 $strExportDirPath = "(Your Export Directory Here)"
