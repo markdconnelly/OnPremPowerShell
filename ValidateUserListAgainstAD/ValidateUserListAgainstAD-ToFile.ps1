@@ -1,3 +1,8 @@
+<#  This script is designed to take a list of users and compare them against Active Directory. It will then export the results to two different files.
+    One file will contain details about the users that were successfully resolved and the other will contain details about the users that were not resolved.
+    These outputs can then be used to identify users that were provided on the source list but are not in Active Directory.
+    The Resolved Users output can then be used in conjunction with other scripts to perform tasks like bulk group adds or bulk group removals etc with 
+    valid users.    #>
 ####################### Variables Requiring Input #################
 $strImportFilePath = "(Your Import File Here)"
 $strExportDirPath = "(Your Export Directory Here)"
